@@ -1,0 +1,55 @@
+label {
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 140px;
+    text-align: right;
+    margin-bottom: 1em;
+    margin-right: 5px;
+}
+
+input {
+  display: inline-block;
+  float: left;
+  margin-bottom: 1em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #BD5D38;
+    color: white;
+}
+
+.form_button {
+    display: inline-block;
+    color: #BD5D38;
+    width: 7em;
+}
+
+.form_button:hover {
+    color: #803020;
+}
+
+.flash {
+    color: black;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: -2em;
+    margin-bottom: 1em;
+}
+
+.clear_format {
+    text-transform: none;
+}

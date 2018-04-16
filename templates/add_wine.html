@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid p-0">
+  
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+    <div class="my-auto">
+      <h2 class="mb-5">Add a New Wine</h2>
+
+      {% block flash %}
+        {{ super() }}
+      {% endblock %}
+
+      <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-content mr-auto">
+          <form method="POST" action="/add_wine">
+            {{ form.hidden_tag() }}
+            <div class="subheading mb-3">
+              {{ form.wine_type.label(class="spacer") }} {{ form.wine_type }}
+            </div>
+            <div class="subheading mb-3">
+              {{ form.country.label }} {{ form.country }}
+            </div>
+            <div class="subheading mb-3">
+              {{ form.region.label }} {{ form.region }}
+            </div>
+            <div class="subheading mb-3">
+              {{ form.variety.label }} {{ form.variety }}
+            </div>
+            <div class="subheading mb-3">
+              {{ form.winery_name.label }} {{ form.winery_name }}
+            </div>
+            <div class="subheading mb-3">
+              {{ form.year.label }} {{ form.year }}
+            </div>
+            <div class="subheading mb-3">
+              {{ form.price.label }} {{ form.price }}
+            </div>
+            <div class="subheading mb-3">
+              {{ form.submit(class="form_button") }}
+            </div>
+          </form>
+    </div>
+  </section>
+
+</div>
+
+{% endblock %}

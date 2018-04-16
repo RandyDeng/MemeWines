@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid p-0">
+  
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+    <div class="my-auto">
+      <h2 class="mb-5">Shopping Cart</h2>
+
+      {% block flash %}
+        {{ super() }}
+      {% endblock %}
+
+      <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-content mr-auto">
+          <form method="POST" action="/cart">
+            {{ form.hidden_tag() }}
+            <table>
+              <tr>
+                <th>Wine Type</th>
+                <th>Country</th>
+                <th>Region</th>
+                <th>Variety</th>
+                <th>Winery Name</th>
+                <th>Year</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Delete</th>
+              </tr>
+              {% for item in shopping_cart %}
+              <tr>
+                <td>{{ item.wine_type }} </td>
+                <td>{{ item.country }}</td>
+                <td>{{ item.region }}</td>
+                <td>{{ item.variety }}</td>
+                <td>{{ item.winery_name }}</td>
+                <td>{{ item.year }}</td>
+                <td>${{ item.price }}</td>
+                <td>
+                  {{ form.quantities[loop.index0].amount(size=3, value=item.amount) }}
+                  {{ form.quantities[loop.index0].item_key(value=item.key) }}
+                </td>
+                <td>
+                  <a href="/delete_item/{{ item.key }}">
+                    <i class="fa fa-trash-o fa-2x"></i>
+                  </a>
+                </td>
+              </tr>
+              {% endfor %}
+              <tr>
+                <td> <h5 class="mb-1 clear_format"> Total Price: </h5> </td>
+                <td> <h5 class="mb-1 clear_format"> ${{ total }} </h5> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+            <div class="subheading mb-10">
+              {{ form.update(class="form_button") }}
+            </div>
+          </form>
+          <form method="POST" action="/purchase">
+            {{ form.hidden_tag() }}
+            <div class="subheading mb-5">
+              <button type="submit" class="form_button">Purchase</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{% endblock %}

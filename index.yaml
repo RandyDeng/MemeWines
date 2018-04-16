@@ -1,0 +1,16 @@
+indexes:
+- kind: Wine
+  ancestor: yes
+  properties:
+  - name: wine_type
+    direction: asc
+  - name: country
+    direction: asc
+  - name: region
+    direction: asc
+  - name: variety
+    direction: asc
+  - name: winery_name
+    direction: asc
+  - name: year
+    direction: asc

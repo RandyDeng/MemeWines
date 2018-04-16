@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid p-0">
+  
+  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+    <div class="my-auto">
+      <h2 class="mb-5">Purchase History</h2>
+
+      <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-content mr-auto">
+          {% for purchase in history %}
+            <h5 class="mb-1 clear_format"> Purchaser: {{ purchase.user }} </h5>
+            <h5 class="mb-1 clear_format"> Timestamp: {{ purchase.timestamp }} </h5>
+            <h5 class="mb-1 clear_format"> Total: ${{ purchase.total }} </h5>
+            <table>
+              <tr>
+                <th>Wine Type</th>
+                <th>Country</th>
+                <th>Region</th>
+                <th>Variety</th>
+                <th>Winery Name</th>
+                <th>Year</th>
+                <th>Price</th>
+                <th>Qty</th>
+              </tr>
+              {% for wine in purchase.cart %}
+              <tr>
+                <td>{{ wine.wine_type }} </td>
+                <td>{{ wine.country }}</td>
+                <td>{{ wine.region }}</td>
+                <td>{{ wine.variety }}</td>
+                <td>{{ wine.winery_name }}</td>
+                <td>{{ wine.year }}</td>
+                <td>${{ wine.price }}</td>
+                <td>{{ wine.amount }}</td>
+              </tr>
+              {% endfor %}
+            </table>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+{% endblock %}

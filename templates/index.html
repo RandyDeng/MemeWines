@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid p-0">
+
+  <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+    <div class="my-auto">
+      <h1 class="mb-0">Randy Deng's
+        <span class="text-primary">Winery</span>
+      </h1>
+      <div class="subheading mb-5">Georgia Tech · ECE 6102 · Dependable Distributed Systems ·
+        <a href="mailto:rdeng30@gatech.edu">rdeng30@gatech.edu</a>
+      </div>
+
+      {% block flash %}
+        {{ super() }}
+      {% endblock %}
+
+      <p class="mb-5">I am a full stack developer experienced in creating websites that sell specialized wines. I have been in this business for several days now and I highly recommend you browse some of the wines I own!</p>
+
+      <p class="mb-5">{{ login|safe }}</p>
+
+      <ul class="list-inline list-social-icons mb-0">
+        <li class="list-inline-item">
+          <a href="https://www.facebook.com/randy.deng.1">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://www.randydeng.com">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-user-circle fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://www.linkedin.com/in/randydeng">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://github.com/RandyDeng">
+            <span class="fa-stack fa-lg">
+              <i class="fa fa-circle fa-stack-2x"></i>
+              <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</div>
+
+{% endblock %}
