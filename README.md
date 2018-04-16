@@ -2,7 +2,7 @@ Name: Randy Deng
 Project: Wine Database Project
 Class: ECE6102
 
-Project URL: https://randywinery2.appspot.com/ 
+Project URL: https://randydengwinery2.appspot.com/ 
 
 This project uses a Python Flask backend for routing and algorithm logic,
 WTForms and flask_wtf for form validation and input,
