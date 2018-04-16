@@ -1,5 +1,7 @@
 Name: Randy Deng
+
 Project: Wine Database Project
+
 Class: ECE6102
 
 Project URL: https://randydengwinery2.appspot.com/ 
